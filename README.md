@@ -7,6 +7,8 @@
 - nodejs 14 (others may work as well)
 - Prepared backend running at (http://localhost:8000)
 
+## Steps
+
 1. Clone the project and `cd there`
 2. Run `npm install`
 3. Run `npm run serve`
