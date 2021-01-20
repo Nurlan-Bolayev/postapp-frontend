@@ -1,7 +1,8 @@
 <template>
   <v-app-bar
       app
-      color="primary"
+      :color="$route.path === '/' ? 'transparent' : 'primary'"
+      :elevation="$route.path === '/' ? 0 : undefined"
       dark
   >
     <router-link :to="user ? '/feeds' : '/'">
