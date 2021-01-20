@@ -63,7 +63,8 @@ export default {
     async register() {
       try {
         this.isRegistering = true;
-        await axios.post('api/register', this.body);
+        const {data} = await axios.post('api/register', this.body);
+        this.$store.commit('setUser', data)
         this.$router.push('/feeds');
       } catch (e) {
         this.errors = e.response?.data?.errors || {};

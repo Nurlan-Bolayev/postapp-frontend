@@ -55,7 +55,8 @@ export default {
     async login() {
       try {
         this.isLoggingIn = true;
-        await axios.post('api/login', this.body);
+        const {data} = await axios.post('api/login', this.body);
+        this.$store.commit('setUser', data)
         this.$router.push('/feeds')
       } catch (e) {
         this.errors = e.response?.data?.errors || {};
