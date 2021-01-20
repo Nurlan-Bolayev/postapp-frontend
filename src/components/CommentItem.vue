@@ -28,6 +28,8 @@
           <span class="px-2"> · </span>
           <span class="text-caption a-link" @click="onReplyClick">
             View replies ({{ comment.replies_count }})
+
+            <v-progress-circular v-if="isLoadingReplies" indeterminate size="10" width="1"/>
          </span>
         </template>
 
