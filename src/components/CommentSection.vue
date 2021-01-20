@@ -5,9 +5,8 @@
 
         <span @click="loadAllComments" class="more-comments text-body-1">
           View {{ post.comments_count - comments.length }} more comments
+          <v-progress-circular v-if="isLoadingComments" indeterminate class="ml-1" size="16" width="2"/>
         </span>
-
-        <v-progress-linear v-show="isLoadingComments" indeterminate class="my-1"/>
       </div>
 
       <div v-if="comments.length">
